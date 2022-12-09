@@ -34,4 +34,13 @@
 
 - docker 컨테이너 삭제
   - docker rm 이름
-  - 컨테이너 삭제 전에 컨테이너 중지를 해야 함. 안하면 삭제가 
+  - 컨테이너 삭제 전에 컨테이너 중지를 해야 함. 안하면 삭제가
+  
+- docker 컨테이너 접속
+  - docker exec -it 이름 /bin/bash
+  - 초기 접속 시 업데이트 필요 : apt update -y & apt-get install wget(wget으로 깔기 위해)
+    - 계정 생성 : useradd 이름
+    - 폴더 생성 : mkdir 위치 생성
+    - chown 이름:이름 아까 폴더 생성한 위치 -> 이건 뭔지 확인 필요
+    - 생성한 계정으로 들어가기 su - 이름
+ 
