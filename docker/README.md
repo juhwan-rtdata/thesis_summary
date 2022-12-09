@@ -32,6 +32,9 @@
 - docker 컨테이너 중지
   - docker stop 이름
 
+- docker 컨테이너 재실행
+  - docker start 이름
+
 - docker 컨테이너 삭제
   - docker rm 이름
   - 컨테이너 삭제 전에 컨테이너 중지를 해야 함. 안하면 삭제가
@@ -44,3 +47,6 @@
     - chown 이름:이름 아까 폴더 생성한 위치 -> 이건 뭔지 확인 필요
     - 생성한 계정으로 들어가기 su - 이름
  
+- docker 컨테이너 나가기
+  - exit
+
