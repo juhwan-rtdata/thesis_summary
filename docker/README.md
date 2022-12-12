@@ -2,6 +2,7 @@
 ## 1. docker 기초 코드
 - docker 버전 확인
   - docker version
+  - 계정에 docker version 다 나오게 하기 : sudo chmod 666 /var/run/docker.sock
 - docker 컨테이너 확인
   - docker ps
   - docker ps -a
@@ -52,3 +53,4 @@
 
 - docker 아나콘다 설치
   - 리눅스처럼 설치하면 됨 wget써서 다운 받고 sh 써서 
+
