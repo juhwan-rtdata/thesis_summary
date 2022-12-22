@@ -56,3 +56,16 @@
 
 - docker 컨테이너 복제
   - docker commit [복제할 컨테이너 이름] [복제했을 때 생성 되는 이미지] 
+
+
+- docker vscode 접속 방법
+  - vscode 확장 프로그램에서 remote development 설치
+  - ssh에 컨테이너 영역이 생겨 서버 연결하면 자동적으로 컨테이너 목록 생성
+    - 오른쪽 버튼으로 attach 하면 열림
+
+- docker 컨테이너 내 jupyter notebook 들어가는 방법
+  - 평소처럼 jupyter notebook 치면 안 들어가짐
+  - jupyter notebook  --ip='*' --port=8888 --allow-root
+  
+- 로컬에서 docker 컨테이너로 파일 옮기는 법
+  - docker ps (옮기려는 로컬 파일 위치) (컨테이터 이름):(컨테이너에서 저장시키고 싶은 위치) 
