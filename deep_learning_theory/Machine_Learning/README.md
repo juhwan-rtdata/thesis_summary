@@ -214,4 +214,29 @@ $$acc(f; D) = \int\limits_x^D Ⅱ(f(x)=y)p(x)dx = 1-E(f; D) $$
 - F1 스코어 일반 형식 : F<sub>β</sub>
   - 정밀도/재현율에 대한 서로 다른 선호도
   - $$\frac{1}{F_{β}} = \frac{1}{1+β^2}·(\frac{1}{P}+\frac{β^2}{R})$$
-  - 
+  - $$F_{β} = \frac{(1+β^2)×P×R}{(β^2×P)+R}$$
+    - β>0 : 정밀도에 대한 재율의 상대적 중요도를 측정함
+    - β=1 : 일반적인 F1 스코어가 됨
+    - β>1 : 재현율의 영향력이 더 큼
+    - β<1 : 정밀도의 영향력이 더 큼
+- 한 번에 정밀도와 재현율을 평가할 수 있는 하나의 종합적인 혼동행렬을 얻고 싶어함
+  - 한 가지 방법 : 각 혼동행렬에 대해 정밀도와 재현율을 계산하고 (P<sub>1</sub>, R<sub>1</sub>),(P<sub>2</sub>, R<sub>2</sub>), ..., (P<sub>n</sub>, R<sub>n</sub>)
+  - 매크로 정밀도(macro-P), 매크로 재현율(macro-R) : 위의 평균값을 계산한 것
+  - $$macro-P = \frac{1}{n}\displaystyle\sum_{i=1}^{n}P_{i}$$
+  - $$macro-R = \frac{1}{n}\displaystyle\sum_{i=1}^{n}R_{i}$$
+  - 매크로 F1(macro-F1) : 위의 방법으로 만든 F1 스코어
+  - $$macro-F1 = \frac{2×macro-P×macro-R}{macro-P+macro-R}$$
+
+- 마이크로 정밀도(micro-P), 마이크로 재현율(micro-R), 마이크로 F1(micro-F1) 스코어
+  - 다른 방법으로는 각 혼동행렬이 대응하는 원소에 대한 평균을 내면 TP, FP, TN, FN의 평균값을 얻을 수 있고 이들을 각각 \overline{TP}, \overline{FP}, \overline{TN}, \overline{FN} 으로 기록하여 나타내고 평균값을 계산함
+  - $$micro-P = \frac{\overline{TP}}{\overline{TP}+\overline{FP}}$$
+  - $$micro-R = \frac{\overline{TP}}{\overline{TP}+\overline{FN}}$$
+  - $$micro-F1 = \frac{2×micro-P×micro-R}{micro-P+micro-R}$$
+
+### 2.3.3 ROC와 AUC
+- 많은 학습기가 테스트 세트를 위해 실숫값 혹은 확률 예측값을 계산해 냄
+  - 해당 예측값과 하나의 분류 임계치를 비교함
+  - 만약 임계치보다 크면 양성값(positive value), 작으면 음성값(negative value)으로 분류함
+  - 차단점(cut point) : 양성 값으로 분류될 '가능성'이 가장 큰 샘플이 가장 앞으로 '가능성'이 가장 작은 샘플은 가장 뒤에 놓음
+    - 해당 분류 과정은 해당 순서를 기준으로 샘플을 양분하는 과정과 유사함
+    - 
