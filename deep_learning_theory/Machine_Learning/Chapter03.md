@@ -18,11 +18,20 @@
   - 데이터 세트 D는 {(x<sub>1</sub>,y<sub>1</sub>),(x<sub>2</sub>,y<sub>2</sub>),...,(x<sub>m</sub>,y<sub>m</sub>)}으로 정의
     - x<sub>i</sub> : (x<sub>i1</sub>; x<sub>i2</sub>; ...; x<sub>id</sub>), y<sub>i</sub> ∈ IR로 정의
 - 선형 회귀는 다음과 같은 함수를 학습함
-  - $$f(x_{i})=wx_{i}+b을 통해 f(x_{i}) ≒ y_{i}을 얻음 $$
+  - $$f(x_{i})=wx_{i}+b을 통해 f(x_{i}) \simeq y_{i}을 얻음 $$
   - w와 b는 어떻게 정해지는가?
     - f(x)와 y의 차이를 어떻게 측정하느냐에 달렸음
 - 평균제곱 오차 -> 회귀 문제에서 가장 자주 사용하는 성능 측도
   - 평균제곱 오차를 최소화하는 방법
-  - $$ f(w^2, b^2) = argmin_(w,b) $$
 
+$$ w^\*, b^\* = argmin_(w,b) \displaystyle\sum_{i=1}^{m} (f(x_{i})-y_{i})^2 = argmin_(w,b) \displaystyle\sum_{i=1}^{m} (y_{i}-wx_{i}-b)^2$$
 
+- 평균제곱 오차 : 기하학적인 의미
+  - 유클리드 거리를 사용하기 때문
+- 최소제곱법(least square method) : 평균제곱 오차를 최소화하는 방법으로 모델의 해를 구하는 방법
+  - 선형 회귀에서의 목표 : 샘플과의 유클리드 거리의 합이 가장 작은 하나의 직선을 찾는 것
+  - w와 b의 해를 찾는 것 
+    - $$E_(w,b) = \displaystyle\sum_{i=1}^{m} (y_{i}-xw_{i}-b)^2를 최소화하는 과정$$ 
+    - 이를 선형 회귀 모델의 최소제곱 파라미터 예측이라고 부름
+    - E<sub>(w,b)</sub>로 w와 b에 대한 식
+    - 
