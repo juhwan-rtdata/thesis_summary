@@ -39,3 +39,10 @@ $$ w^\*, b^\* = argmin_(w,b) \displaystyle\sum_{i=1}^{m} (f(x_{i})-y_{i})^2 = ar
     - w와 b에 대한 식을 0으로 만들어 w와 b 최적해(optimum solution)의 닫힌 해(closed-form solution)를 구할 수 있음
       - $$w=\frac{\displaystyle\sum_{i=1}^{m} y_{i}(x_{i}- \overline{x})}{\displaystyle\sum_{i=1}^{m} x_{i}^2 - \frac{1}{m}(\displaystyle\sum_{i=1}^{m} x_{i})^2}$$
       - $$b=\frac{1}{m}\displaystyle\sum_{i=1}^{m}(y_{i}-wx_{i})$$
+      - $$\overline{x}=\frac{1}{m}\displaystyle\sum_{i=1}^{m}x_{i}$$
+        - x의 평균값
+- 다항 선형 회귀(multivariate linear regression)
+  - d개의 속성을 가진 샘플 데이터 세트 D
+  - $$f(x_{i})=w^Tx_{i}+b을 통해  f(x_{i}) \simeq y_{i}을 얻는다.$$
+  - 최소제곱법을 이용하여 w와 b를 추정할 수 있음
+  - w와 b가 합쳐진 형태의 벡터
