@@ -34,4 +34,8 @@ $$ w^\*, b^\* = argmin_(w,b) \displaystyle\sum_{i=1}^{m} (f(x_{i})-y_{i})^2 = ar
     - $$E_(w,b) = \displaystyle\sum_{i=1}^{m} (y_{i}-xw_{i}-b)^2를 최소화하는 과정$$ 
     - 이를 선형 회귀 모델의 최소제곱 파라미터 예측이라고 부름
     - E<sub>(w,b)</sub>로 w와 b에 대한 식
-    - 
+      - $$\frac{\partial E_(w,b)}{\partial w}= 2(w\displaystyle\sum_{i=1}^{m} x_{i}^2 - \displaystyle\sum_{i=1}^{m}(y_{i}-b)x_{i})$$
+      - $$\frac{\partial E_(w,b)}{\partial b}= 2(mb - \displaystyle\sum_{i=1}^{m} (y_{i}-wx_{i}))$$
+    - w와 b에 대한 식을 0으로 만들어 w와 b 최적해(optimum solution)의 닫힌 해(closed-form solution)를 구할 수 있음
+      - $$w=\frac{\displaystyle\sum_{i=1}^{m} y_{i}(x_{i}- \overline{x})}{\displaystyle\sum_{i=1}^{m} x_{i}^2 - \frac{1}{m}(\displaystyle\sum_{i=1}^{m} x_{i})^2}$$
+      - $$b=\frac{1}{m}\displaystyle\sum_{i=1}^{m}(y_{i}-wx_{i})$$
